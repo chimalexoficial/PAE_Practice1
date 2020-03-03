@@ -84,7 +84,7 @@ export class UsuariosControllerController {
   ): Promise<Usuarios[]> {
     return this.usuariosRepository.find(filter);
   }
-
+/* Will not use it
   @patch('/usuarios', {
     responses: {
       '200': {
@@ -105,7 +105,7 @@ export class UsuariosControllerController {
     @param.query.object('where', getWhereSchemaFor(Usuarios)) where?: Where<Usuarios>,
   ): Promise<Count> {
     return this.usuariosRepository.updateAll(usuarios, where);
-  }
+  } */
 
   @get('/usuarios/{id}', {
     responses: {
@@ -160,7 +160,7 @@ export class UsuariosControllerController {
   ): Promise<void> {
     await this.usuariosRepository.replaceById(id, usuarios);
   }
-
+/* Will not use it
   @del('/usuarios/{id}', {
     responses: {
       '204': {
@@ -170,5 +170,5 @@ export class UsuariosControllerController {
   })
   async deleteById(@param.path.string('id') id: string): Promise<void> {
     await this.usuariosRepository.deleteById(id);
-  }
+  }*/
 }

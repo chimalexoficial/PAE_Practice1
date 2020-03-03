@@ -84,7 +84,7 @@ export class FotosControllerController {
   ): Promise<Fotos[]> {
     return this.fotosRepository.find(filter);
   }
-
+/* Will not use it
   @patch('/fotos', {
     responses: {
       '200': {
@@ -105,7 +105,7 @@ export class FotosControllerController {
     @param.query.object('where', getWhereSchemaFor(Fotos)) where?: Where<Fotos>,
   ): Promise<Count> {
     return this.fotosRepository.updateAll(fotos, where);
-  }
+  } */
 
   @get('/fotos/{id}', {
     responses: {
@@ -126,6 +126,7 @@ export class FotosControllerController {
     return this.fotosRepository.findById(id, filter);
   }
 
+  /*  Will not use it
   @patch('/fotos/{id}', {
     responses: {
       '204': {
@@ -145,7 +146,7 @@ export class FotosControllerController {
     fotos: Fotos,
   ): Promise<void> {
     await this.fotosRepository.updateById(id, fotos);
-  }
+  } */ 
 
   @put('/fotos/{id}', {
     responses: {
@@ -160,7 +161,7 @@ export class FotosControllerController {
   ): Promise<void> {
     await this.fotosRepository.replaceById(id, fotos);
   }
-
+/* Will not use it
   @del('/fotos/{id}', {
     responses: {
       '204': {
@@ -170,5 +171,5 @@ export class FotosControllerController {
   })
   async deleteById(@param.path.number('id') id: number): Promise<void> {
     await this.fotosRepository.deleteById(id);
-  }
+  } */
 }

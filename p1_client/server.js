@@ -3,6 +3,7 @@ const app = express();
 const hbs = require('express-handlebars');
 const path = require('path');
 const registroRouter = require('./routes/registro.route')
+const port = 3001
 
 app.engine('hbs', hbs({
     extname: 'hbs',
@@ -22,7 +23,7 @@ app.get('/registro', function(req, res) {
 
 app.use(registroRouter)
 
-app.listen(3000, function() {
-    console.log('Running port');
+app.listen(port, function() {
+    console.log('Running on port ' + port);
 })
 
